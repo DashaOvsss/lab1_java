@@ -1,0 +1,64 @@
+
+public class BinaryStringToInt {
+
+    public static int binaryStringToInt(String s) {
+        if (s == null || s.isEmpty()) {
+            throw new IllegalArgumentException("Input string cannot be null or empty");
+        }
+        if (!s.matches("[01]+")) {
+            throw new IllegalArgumentException("Input string must contain only binary digits (0 and 1)");
+        }
+        return Integer.parseInt(s, 2);
+    }
+
+    public static void main(String[] args) {
+        String[] testInputs = {"10101", "110", "invalid", "", null};
+
+        for (String input : testInputs) {
+            try {
+                int result = binaryStringToInt(input);
+                System.out.println("Input: " + input + " -> Result: " + result);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Input: " + input + " -> Error: " + e.getMessage());
+            }
+        }
+    }
+}
+
+public class AlphanumericCounter {
+
+    public static int countAlphanumericCombinations(String s) {
+        if (s == null || s.isEmpty()) {
+            throw new IllegalArgumentException("Input string cannot be null or empty");
+        }
+
+        String[] words = s.split("\\s+");
+        int count = 0;
+        for (String word : words) {
+            if (word.matches(".*[a-zA-Z].*[0-9].*|.*[0-9].*[a-zA-Z].*")) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        String[] testInputs = {
+            "The user with the nickname koala757677 this month wrote 3 times more comments than the user with the nickname croco181dile920 4 months ago",
+            "abc123 def456 ghi789",
+            "12345 67890",
+            "abc def ghi",
+            "",
+            null
+        };
+
+        for (String input : testInputs) {
+            try {
+                int result = countAlphanumericCombinations(input);
+                System.out.println("Input: " + input + " -> Result: " + result);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Input: " + input + " -> Error: " + e.getMessage());
+            }
+        }
+    }
+}
