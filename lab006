@@ -1,4 +1,3 @@
-
 public class BinaryStringToInt {
 
     public static int binaryStringToInt(String s) {
