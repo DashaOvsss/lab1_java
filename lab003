@@ -1,10 +1,9 @@
-// Task 2: Calculate the sum of the series
 class Task2 {
     public static void main(String[] args) {
         try {
-            System.out.println(calculateSum(3, -2, 1)); // Example of valid parameters
-            System.out.println(calculateSum(25, -2, 1)); // Example of valid parameters
-            System.out.println(calculateSum(1, -2, 1)); // Invalid (k < 2)
+            System.out.println(calculateSum(3, -2, 1)); 
+            System.out.println(calculateSum(25, -2, 1)); 
+            System.out.println(calculateSum(1, -2, 1)); 
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
         }
@@ -26,13 +25,13 @@ class Task2 {
     }
 }
 
-// Task 10: Calculate the value of the function x(t, n)
+
 class Task10 {
     public static void main(String[] args) {
         try {
-            System.out.println(calculateX(-2, 5)); // Valid for t < 0
-            System.out.println(calculateX(2, 5));  // Valid for t >= 0
-            System.out.println(calculateX(2, -5)); // Invalid (n < 1)
+            System.out.println(calculateX(-2, 5)); 
+            System.out.println(calculateX(2, 5));  
+            System.out.println(calculateX(2, -5)); 
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
         }
@@ -57,14 +56,14 @@ class Task10 {
     }
 }
 
-// Task 13: Calculate the infinite sum with given accuracy
 class Task13 {
     public static void main(String[] args) {
         try {
-            System.out.println(calculateInfiniteSum(0.001)); // Example with epsilon = 0.001
-            System.out.println(calculateInfiniteSum(1e-6));  // Example with epsilon = 1e-6
-            System.out.println(calculateInfiniteSum(-0.01)); // Invalid (epsilon <= 0)
-        } catch (IllegalArgumentException e) {
+            System.out.println(calculateInfiniteSum(0.001));
+            System.out.println(calculateInfiniteSum(1e-6)); 
+            System.out.println(calculateInfiniteSum(-0.01));
+        } 
+            catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
         }
     }
