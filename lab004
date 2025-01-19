@@ -1,0 +1,126 @@
+public class Task17 {
+    public static int findMaxEven(int[] array) {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("Array cannot be null or empty");
+        }
+
+        int maxEven = Integer.MIN_VALUE;
+        for (int num : array) {
+            if (num % 2 == 0 && num > maxEven) {
+                maxEven = num;
+            }
+        }
+
+        if (maxEven == Integer.MIN_VALUE) {
+            throw new IllegalArgumentException("No even elements found in the array");
+        }
+
+        return maxEven;
+    }
+
+    public static void main(String[] args) {
+        int[][] testCases = {
+            {2, 4, 6, 8},
+            {1, 3, 5, 7},
+            {},
+            {10, 15, 20, 25}
+        };
+
+        for (int[] testCase : testCases) {
+            try {
+                System.out.println("Max even: " + findMaxEven(testCase));
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+}
+
+
+public class Task47 {
+    public static int findMaxMultipleOfSix(int[] array) {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("Array cannot be null or empty");
+        }
+
+        int maxElement = Integer.MIN_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            if (i % 6 == 0 && array[i] > maxElement) {
+                maxElement = array[i];
+            }
+        }
+
+        if (maxElement == Integer.MIN_VALUE) {
+            throw new IllegalArgumentException("No elements at indices multiple of 6 found");
+        }
+
+        return maxElement;
+    }
+
+    public static void main(String[] args) {
+        int[][] testCases = {
+            {10, 20, 30, 40, 50, 60, 70},
+            {1, 2, 3, 4, 5, 6},
+            {},
+            {15, 30, 45, 60, 75, 90, 105}
+        };
+
+        for (int[] testCase : testCases) {
+            try {
+                System.out.println("Max at index multiple of 6: " + findMaxMultipleOfSix(testCase));
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+}
+
+public class Task63 {
+    public static int[] modifyArray(int[] array) {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("Array cannot be null or empty");
+        }
+
+        int max = Integer.MIN_VALUE;
+        for (int num : array) {
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        int[] result = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
+                result[i] = array[i] + max;
+            } else if (array[i] == 0) {
+                result[i] = 1;
+            } else {
+                result[i] = array[i] * 2;
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[][] testCases = {
+            {-1, 0, 1, 2, -2},
+            {},
+            {0, 0, 0},
+            {-10, 20, 0, -5}
+        };
+
+        for (int[] testCase : testCases) {
+            try {
+                int[] modifiedArray = modifyArray(testCase);
+                System.out.print("Modified array: ");
+                for (int num : modifiedArray) {
+                    System.out.print(num + " ");
+                }
+                System.out.println();
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+}
