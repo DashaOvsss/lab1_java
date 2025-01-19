@@ -17,6 +17,7 @@ public class InsertionSort {
         }
     }
 
+
     public static void main(String[] args) {
         short[] array = {64, 34, 25, 12, 22, 11, 90};
         sort(array);
